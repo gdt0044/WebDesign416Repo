@@ -1,0 +1,70 @@
+header h1, header h2, header h3{
+    background-color: #ADD8E6; /* Light blue background */
+    padding: 10px;
+    text-align: center;
+    border: 2px solid #000066; /* Dark Blue Border */
+}
+
+/* Styles for nav */
+nav {
+    background-color: #333333; /* Dark color for the nav background */
+    padding: 5px;
+}
+
+/* Styles for p elements inside nav */
+nav p {
+    display: inline-block; /* Aligns items next to each other */
+    width: 17%; /* Makes each element 17% of their parent container's width */
+    min-width: 85px; /* Minimum width to keep text on one line */
+    margin-left: 3px; /* Spaces out the elements */
+    text-align: center; /* Centers the text within the <p> element */
+    background-color: #000066; /* Dark blue background */
+    border: 1px solid #ADD8E6; /* Light blue border */
+    color: #ADD8E6; /* Light blue text color */
+    font-family: Arial, sans-serif; /* Arial font with sans-serif */
+}
+
+/* Styles for anchor elements inside nav p */
+nav p a {
+    color: #ADD8E6; 
+    font-weight: bold; 
+    text-decoration: none; /* Removes underline */
+}
+
+/* New styles for headers within the header element */
+header h1, header h2, header h3 {
+    color: #333333; /* Dark text color (dark grey) */
+    font-family: Arial, sans-serif; /* Arial font with sans-serif */
+    border: 2px solid #333333; /* Medium solid border */
+    padding: 5px; /* Adds padding inside the border */
+    margin: 10px 0; /* Adds margin around the headers */
+}
+
+/* Style for main elements on both pages */
+main {
+    background-color: #ADD8E6; 
+    font-family: Arial, sans-serif; /* Arial font with sans-serif fallback */
+}
+
+/* Style for all headings inside main */
+main h1,
+main h2,
+main h3,
+main h4,
+main h5,
+main h6 {
+    font-family: Arial, sans-serif; /* Arial font with sans-serif fallback */
+}
+
+/* Descendant selector for h2 headings inside main */
+main h2 {
+    text-align: center; 
+}
+
+/* Style for footer on all pages */
+footer {
+    background-color: #333333;
+    color: #ADD8E6; 
+    font-style: italic; /* Italicize the text */
+    text-align: center; /* Center text in the footer */
+}
