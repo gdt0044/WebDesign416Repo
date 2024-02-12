@@ -53,13 +53,14 @@
         <section class="people">
             <h2>Our People</h2>
 
-            <button type="button">Steve Kaufmann, President</button>
-            <button type="button">Khatzumoto, Vice President</button>
+            <button type="button" onClick="displaySteveKaufmannInfo()">Steve Kaufmann, President</button>
+            <button type="button" onClick="displayKhatzumotoInfo()">Khatzumoto, Vice President</button>
 
             <h3 id="dynamic-heading"></h3>  
             <img id="dynamic-image">         
             <p id="dynamic-text"></p>       
 
+            <!--
             <div>
                 <h3>Steve Kaufmann, President</h3>
                 <img src="images/Kaufmann.jpg" alt="Steve Kaufmann">
@@ -67,6 +68,7 @@
                     Steve Kaufmann has been learning languages for most of his adult life. Born in 1945, he was raised in Montreal, Canada. In 1962 Steve traveled to Grenoble, France where he studied French as his first foreign language. By the age of 60, Steve had become functionally fluent in nine languages and has since developed some level of conversational ability in 11 more. Steve has always taken an immersion learning approach to language learning, surrounding himself with text and audio in the language and learning to read and understand bit by bit everyday. Whilst he wasn't always aware of it, he has been putting the Input Hypothesis into practice since before it was even developed. 
                 </p>
             </div>
+            -->
             <div>
                 <h3>Khatzumoto, Vice President</h3>
                 <img src="images/Khatz.jpg" alt="Khatzumoto">
@@ -80,6 +82,24 @@
     <footer>
         <p>Footer content coming soon.</p>
     </footer>
+
+    <script>
+
+        function displaySteveKaufmannInfo() {
+        // Set innerText of the <h3> element
+        document.getElementById("dynamic-heading").innerText = "Steve Kaufmann, President";
+
+        // Set innerText of the <p> element
+        document.getElementById("dynamic-text").innerText = "Steve Kaufmann has been learning languages for most of his adult life. Born in 1945, he was raised in Montreal, Canada. In 1962 Steve traveled to Grenoble, France where he studied French as his first foreign language. By the age of 60, Steve had become functionally fluent in nine languages and has since developed some level of conversational ability in 11 more. Steve has always taken an immersion learning approach to language learning, surrounding himself with text and audio in the language and learning to read and understand bit by bit everyday. Whilst he wasn't always aware of it, he has been putting the Input Hypothesis into practice since before it was even developed."; 
+
+        // Set the src attribute of the <img> element
+        document.getElementById("dynamic-image").setAttribute("src", "images/Kaufmann.jpg");
+     }
+
+        function displayKhatzumotoInfo() {
+                
+            }
+    </script>
 
 </body>
 </html>
