@@ -5,10 +5,23 @@ header h1, header h2, header h3{
     border: 2px solid #000066; /* Dark Blue Border */
 }
 
+/* Float the header image to the left */
+header img {
+    float: left;
+}
+
 /* Styles for nav */
 nav {
+    clear:both;
     background-color: #333333; /* Dark color for the nav background */
     padding: 5px;
+}
+
+/* Clearfix for header */
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
 /* Styles for p elements inside nav */
