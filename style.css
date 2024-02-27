@@ -39,9 +39,12 @@ nav p {
 
 /* Styles for anchor elements inside nav p */
 nav p a {
+    display: inline-block;
+    width: 100%;
     color: #ADD8E6; 
     font-weight: bold; 
     text-decoration: none; /* Removes underline */
+    padding: 10px 0;
 }
 
 /* New styles for headers within the header element */
