@@ -4,6 +4,20 @@
     <meta charset="UTF-8">
     <title>Data - Immersion For All</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        ul.custom-marker {
+            list-style-type: none; /* Removes the default list markers */
+            margin: 0;
+            padding: 0px; /* Removes default padding */
+        }
+        ul.custom-marker li {
+            background-image: url('images/marker.png'); /* Path to your custom marker image */
+            background-repeat: no-repeat; /* Prevents the image from repeating */
+            background-position: 0 5px; /* Positions the image to the left of the text, vertically centered */
+            padding-left: 20px; /* Adjust this value based on the size of your marker image to prevent text overlap */
+            margin-bottom: 10px; /* Adds some space between list items */
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -22,8 +36,13 @@
 
     <main>
         <!-- Content for your data page goes here -->
-        <h2>Data Page Content</h2>
-        <p>This is a placeholder for the data-centric content of the website.</p>
+        <h2>Some information about our Language Leaders</h2>
+        <ul class="custom-marker">
+            <li>Oojiman</li>
+            <li>Livakivi</li>
+            <li>Game Gengo</li>
+            <li>Emis Nikki</li>
+        </ul>
     </main>
 
     <footer>
