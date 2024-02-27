@@ -77,6 +77,15 @@ main h2 {
     text-align: center; 
 }
 
+.staff-image {
+    float: right;
+    margin-left: 20px; /* Adjust as needed */
+}
+
+.clear {
+    clear: both;
+}
+
 /* Style for footer on all pages */
 footer {
     background-color: #333333;
