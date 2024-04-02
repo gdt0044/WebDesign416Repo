@@ -17,6 +17,26 @@
             padding-left: 20px; /* Adjust this value based on the size of your marker image to prevent text overlap */
             margin-bottom: 10px; /* Adds some space between list items */
         }
+
+        table {
+            font-family: Arial, Verdana, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            border: 3px solid #000066;
+        }
+
+        th {
+            background-color: #000066;
+            color: #ADD8E6;
+            padding: 5px 10px;
+        }
+
+        td {
+            background-color: #ADD8E6;
+            color: #000066;
+            border: 1px solid #000066;
+            padding: 5px 10px;
+        }
     </style>
 </head>
 <body>
@@ -37,16 +57,47 @@
     <main>
         <!-- Content for your data page goes here -->
         <h2>Some information about our Language Leaders</h2>
-        <ul class="custom-marker">
-            <li>Oojiman</li>
-            <li>Livakivi</li>
-            <li>Game Gengo</li>
-            <li>Emis Nikki</li>
-        </ul>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Country</th>
+                <th>Languages Spoken</th>
+                <th>Years of Experience</th>
+            </tr>
+            <tr>
+                <td>Oojiman</td>
+                <td>29</td>
+                <td>Japan</td>
+                <td>Japanese, English</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>Livakivi</td>
+                <td>35</td>
+                <td>Finland</td>
+                <td>Finnish, Swedish, English</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td>Game Gengo</td>
+                <td>42</td>
+                <td>USA</td>
+                <td>English, Spanish, Japanese</td>
+                <td>15</td>
+            </tr>
+            <tr>
+                <td>Emis Nikki</td>
+                <td>30</td>
+                <td>France</td>
+                <td>French, English, Spanish</td>
+                <td>7</td>
+            </tr>
+        </table>
     </main>
 
     <footer>
-        <p>Footer content coming soon.</p>
+        <p>Site copyright &copy; 2024 by Grant Durant.</p>
     </footer>
 </body>
 </html>
