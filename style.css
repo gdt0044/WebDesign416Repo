@@ -1,20 +1,28 @@
+:root {
+    --light-color: #ADD8E6; /* Light blue background */
+    --dark-color: #333333; /* Dark color for the nav background and borders */
+    --border-dark-color: #000066; /* Dark blue for borders specifically */
+}
+
 
 header h1, header h2, header h3{
-    background-color: #ADD8E6; /* Light blue background */
+    background-color: var(--light-color); /* Light blue background */
     padding: 10px;
     text-align: center;
-    border: 2px solid #000066; /* Dark Blue Border */
+    border: 2px solid var(--border-dark-color);
 }
 
 /* Float the header image to the left */
 header img {
     float: left;
+    margin-right: 20px; /* Add space between the logo and the header text */
+
 }
 
 /* Styles for nav */
 nav {
     clear:both;
-    background-color: #333333; /* Dark color for the nav background */
+    background-color: var(--dark-color);
     padding: 5px;
 }
 
@@ -32,9 +40,9 @@ nav p {
     min-width: 85px; /* Minimum width to keep text on one line */
     margin-left: 3px; /* Spaces out the elements */
     text-align: center; /* Centers the text within the <p> element */
-    background-color: #000066; /* Dark blue background */
-    border: 1px solid #ADD8E6; /* Light blue border */
-    color: #ADD8E6; /* Light blue text color */
+    background-color: var(--border-dark-color);
+    border: 1px solid var(--light-color);
+    color: var(--light-color);
     font-family: Arial, sans-serif; /* Arial font with sans-serif */
 }
 
@@ -42,7 +50,7 @@ nav p {
 nav p a {
     display: inline-block;
     width: 100%;
-    color: #ADD8E6; 
+    color: var(--light-color);
     font-weight: bold; 
     text-decoration: none; /* Removes underline */
     padding: 10px 0;
@@ -50,16 +58,20 @@ nav p a {
 
 /* New styles for headers within the header element */
 header h1, header h2, header h3 {
-    color: #333333; /* Dark text color (dark grey) */
+    color: var(--dark-color);
     font-family: Arial, sans-serif; /* Arial font with sans-serif */
-    border: 2px solid #333333; /* Medium solid border */
+    border: 2px solid var(--dark-color);
     padding: 5px; /* Adds padding inside the border */
     margin: 10px 0; /* Adds margin around the headers */
 }
 
+header h1 {
+    margin-top: 15px; /* Adjust this value as needed to center vertically */
+}
+
 /* Style for main elements on both pages */
 main {
-    background-color: #ADD8E6; 
+    background-color: var(--light-color);
     font-family: Arial, sans-serif; /* Arial font with sans-serif fallback */
 }
 
@@ -89,8 +101,8 @@ main h2 {
 
 /* Style for footer on all pages */
 footer {
-    background-color: #333333;
-    color: #ADD8E6; 
+    background-color: var(--dark-color);
+    color: var(--light-color);
     font-style: italic; /* Italicize the text */
     text-align: center; /* Center text in the footer */
 }
@@ -105,20 +117,20 @@ table {
     font-family: Arial, Verdana, sans-serif; /* Arial font with Verdana fallback */
     border-collapse: collapse; /* Collapses the border */
     width: 100%; /* The table will fill the width of the container */
-    border: 3px solid #000066; /* Dark Blue Border around the entire table */
+    border: 3px solid var(--border-dark-color);
 }
 
 /* Style for table headers */
 th {
-    background-color: #000066; /* Dark blue background */
-    color: #ADD8E6; /* Light blue text color */
+    background-color: var(--border-dark-color);
+    color: var(--light-color);
     padding: 5px 10px; /* Padding for text in th cells */
 }
 
 /* Style for table data */
 td {
-    background-color: #ADD8E6; /* Light blue background */
-    color: #000066; /* Dark text color */
-    border: 1px solid #000066; /* Dark Blue Border */
+    background-color: var(--light-color);
+    color: var(--border-dark-color);
+    border: 1px solid var(--border-dark-color);
     padding: 5px 10px; /* Padding for text in td cells */
 }
