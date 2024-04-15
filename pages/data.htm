@@ -18,7 +18,7 @@
             margin-bottom: 10px; /* Adds some space between list items */
         }
 
-        main{
+        main {
             width: 800px; /* Set the width of the main element */
             margin: 0 auto; /* Center the main element on the page */
             padding: 10px; 
@@ -32,6 +32,14 @@
             background-position: center;
             background-attachment: fixed;
             background-size: cover;
+        }
+        .inline-block {
+            display: inline-block;
+            margin-right: 10px; /* Add some space between the paragraph and the input field */
+        }
+
+         #ageInput {
+            display: inline-block; /* Ensures that the input field is also inline-block */
         }
 
         table {
@@ -75,45 +83,66 @@
         <h2>Some information about our Language Leaders</h2>
         <table>
             <tr>
-                <th>Name</th>
-                <th>Age</th>
-                <th>Country</th>
-                <th>Languages Spoken</th>
-                <th>Years of Experience</th>
+                <th id="name-col">Name</th>
+                <th id="age-col">Age</th>
+                <th id="country-col">Country</th>
+                <th id="language-col">Languages Spoken</th>
+                <th id="experience-col">Years of Experience</th>
             </tr>
             <tr>
-                <td>Oojiman</td>
-                <td>29</td>
-                <td>Japan</td>
-                <td>Japanese, English</td>
-                <td>5</td>
+                <td id="name1">Oojiman</td>
+                <td id="age1">29</td>
+                <td id="country1">Japan</td>
+                <td id="language1">Japanese, English</td>
+                <td id="experience1">5</td>
             </tr>
             <tr>
-                <td>Livakivi</td>
-                <td>35</td>
-                <td>Finland</td>
-                <td>Finnish, Swedish, English</td>
-                <td>10</td>
+                <td id="name2">Livakivi</td>
+                <td id="age2">35</td>
+                <td id="country2">Finland</td>
+                <td id="language2">Finnish, Swedish, English</td>
+                <td id="experience2">10</td>
             </tr>
             <tr>
-                <td>Game Gengo</td>
-                <td>42</td>
-                <td>USA</td>
-                <td>English, Spanish, Japanese</td>
-                <td>15</td>
+                <td id="name3">Game Gengo</td>
+                <td id="age3">42</td> 
+                <td id="country3">USA</td>
+                <td id="language3">English, Spanish, Japanese</td>
+                <td id="experience3">15</td>
             </tr>
             <tr>
-                <td>Emis Nikki</td>
-                <td>30</td>
-                <td>France</td>
-                <td>French, English, Spanish</td>
-                <td>7</td>
+                <td id="name4">Emis Nikki</td>
+                <td id="age4">30</td>
+                <td id="country4">France</td>
+                <td id="language4">French, English, Spanish</td>
+                <td id="experience4">7</td>
             </tr>
         </table>
+
+        <p class="inline-block">
+            Find all people over this age:
+        </p>
+        <input type="number" id="ageInput" placeholder="Enter age" />
+        <button id="findButton">Find!</button>
+
     </main>
 
     <footer>
         <p>Site copyright &copy; 2024 by Grant Durant.</p>
     </footer>
+
+    <script>
+        // Function that will be called when the button is clicked
+        function findData() {
+          console.log("Running the function."); // Test message to display in the console
+          alert("Running the function."); // Display message to the user
+        }
+      
+        // Set up the event listener for the button
+        window.onload = function() {
+          document.getElementById("findButton").addEventListener("click", findData);
+        }
+      </script>
+      
 </body>
 </html>
