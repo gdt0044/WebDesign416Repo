@@ -124,6 +124,7 @@
         </p>
         <input type="number" id="ageInput" placeholder="Enter age" />
         <button id="findButton">Find!</button>
+        <div id="results"></div>
 
     </main>
 
@@ -132,17 +133,38 @@
     </footer>
 
     <script>
-        // Function that will be called when the button is clicked
         function findData() {
-          console.log("Running the function."); // Test message to display in the console
-          alert("Running the function."); // Display message to the user
+    // Get the entered age from the input field and convert it to an integer
+    var enteredValue = parseInt(document.getElementById("ageInput").value, 10);
+
+    // Clear any previous results
+    var resultsDiv = document.getElementById("results");
+    resultsDiv.innerHTML = "";
+
+    // Loop through each row (adjust the '4' to match the number of rows you have)
+    for (var i = 1; i <= 4; i++) {
+        var currentAge = parseInt(document.getElementById("age" + i).textContent, 10);
+
+        // Check if the current age is greater than the entered value
+        if (currentAge > enteredValue) {
+            // Append a message to the results div for this row
+            resultsDiv.innerHTML += "Found someone over " + enteredValue + " in row " + i + ".<br>";
         }
+    }
+
+    // If no results, indicate that
+    if (resultsDiv.innerHTML === "") {
+        resultsDiv.innerHTML = "No one found over " + enteredValue + ".";
+    }
+}
+
       
         // Set up the event listener for the button
         window.onload = function() {
           document.getElementById("findButton").addEventListener("click", findData);
         }
       </script>
+      
       
 </body>
 </html>
