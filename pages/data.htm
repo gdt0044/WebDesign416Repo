@@ -134,36 +134,47 @@
 
     <script>
         function findData() {
-    // Get the entered age from the input field and convert it to an integer
-    var enteredValue = parseInt(document.getElementById("ageInput").value, 10);
-
-    // Clear any previous results
-    var resultsDiv = document.getElementById("results");
-    resultsDiv.innerHTML = "";
-
-    // Loop through each row (adjust the '4' to match the number of rows you have)
-    for (var i = 1; i <= 4; i++) {
-        var currentAge = parseInt(document.getElementById("age" + i).textContent, 10);
-
-        // Check if the current age is greater than the entered value
-        if (currentAge > enteredValue) {
-            // Append a message to the results div for this row
-            resultsDiv.innerHTML += "Found someone over " + enteredValue + " in row " + i + ".<br>";
+            // Get the entered age from the input field and convert it to an integer
+            var enteredValue = parseInt(document.getElementById("ageInput").value, 10);
+          
+            // Clear any previous results
+            var resultsDiv = document.getElementById("results");
+            resultsDiv.innerHTML = "";
+          
+            // Variable to track if we found any matching rows
+            var found = false;
+          
+            // Loop through each row based on the number of rows you have
+            for (var i = 1; i <= 4; i++) { // Adjust the 4 to the number of rows you have
+                var currentAge = parseInt(document.getElementById("age" + i).textContent, 10);
+          
+                // Compare the current age to the entered value
+                if (currentAge > enteredValue) { // Use < for 'under' as per your data needs
+                    // Get the corresponding name for this row
+                    var currentName = document.getElementById("name" + i).textContent;
+          
+                    // Create a new paragraph element with the name and age
+                    var newParagraph = document.createElement("p");
+                    newParagraph.textContent = "Name: " + currentName + ", Age: " + currentAge;
+          
+                    // Append the new paragraph to the results div
+                    resultsDiv.appendChild(newParagraph);
+                    found = true;
+                }
+            }
+          
+            // If no results found, display a message
+            if (!found) {
+                resultsDiv.innerHTML = "Sorry, no one is over the age of " + enteredValue + ".";
+            }
         }
-    }
-
-    // If no results, indicate that
-    if (resultsDiv.innerHTML === "") {
-        resultsDiv.innerHTML = "No one found over " + enteredValue + ".";
-    }
-}
-
-      
+        
         // Set up the event listener for the button
         window.onload = function() {
-          document.getElementById("findButton").addEventListener("click", findData);
+            document.getElementById("findButton").addEventListener("click", findData);
         }
-      </script>
+        </script>
+        
       
       
 </body>
