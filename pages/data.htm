@@ -126,6 +126,16 @@
         <button id="findButton">Find!</button>
         <div id="results"></div>
 
+        <h3>Available Languages</h3>
+        <ol id="languageList"></ol>
+
+        <button id="chooseLanguageButton">Choose a language</button>
+        <div id="results"></div>
+
+        <button id="addLanguageButton">Add a language</button>
+        <button id="removeLanguageButton">Remove a language</button>
+        <div id="results"></div>
+
     </main>
 
     <footer>
@@ -133,45 +143,105 @@
     </footer>
 
     <script>
-        function findData() {
-            // Get the entered age from the input field and convert it to an integer
-            var enteredValue = parseInt(document.getElementById("ageInput").value, 10);
-          
-            // Clear any previous results
-            var resultsDiv = document.getElementById("results");
-            resultsDiv.innerHTML = "";
-          
-            // Variable to track if we found any matching rows
-            var found = false;
-          
-            // Loop through each row based on the number of rows you have
-            for (var i = 1; i <= 4; i++) { // Adjust the 4 to the number of rows you have
-                var currentAge = parseInt(document.getElementById("age" + i).textContent, 10);
-          
-                // Compare the current age to the entered value
-                if (currentAge > enteredValue) { // Use < for 'under' as per your data needs
-                    // Get the corresponding name for this row
-                    var currentName = document.getElementById("name" + i).textContent;
-          
-                    // Create a new paragraph element with the name and age
-                    var newParagraph = document.createElement("p");
-                    newParagraph.textContent = "Name: " + currentName + ", Age: " + currentAge;
-          
-                    // Append the new paragraph to the results div
-                    resultsDiv.appendChild(newParagraph);
-                    found = true;
-                }
-            }
-          
-            // If no results found, display a message
-            if (!found) {
-                resultsDiv.innerHTML = "Sorry, no one is over the age of " + enteredValue + ".";
+
+    function updateLanguageList() {
+        var list = document.getElementById('languageList');
+        list.innerHTML = ''; // Clear existing list items
+        languages.forEach(function(language) {
+            var li = document.createElement('li');
+            li.textContent = language;
+            list.appendChild(li);
+        });
+}
+       function findData() {
+        var enteredValue = parseInt(document.getElementById("ageInput").value, 10);
+        var resultsDiv = document.getElementById("results");
+        resultsDiv.innerHTML = ""; // Clear previous results
+        var table = document.getElementsByTagName("table")[0];
+        var found = false;
+
+        // Start loop from 1 to skip header row
+        for (var i = 1; i < table.rows.length; i++) {
+            var currentRow = table.rows[i];
+            var currentAge = parseInt(currentRow.cells[1].textContent, 10); 
+
+            if (currentAge > enteredValue) {
+                var currentName = currentRow.cells[0].textContent; 
+                var newParagraph = document.createElement("p");
+                newParagraph.textContent = "Name: " + currentName + ", Age: " + currentAge;
+                resultsDiv.appendChild(newParagraph);
+                found = true;
             }
         }
+
+        if (!found) {
+            resultsDiv.innerHTML = "Sorry, no one is over the age of " + enteredValue + ".";
+        }
+    }
         
-        // Set up the event listener for the button
-        window.onload = function() {
+
+        // Array of languages
+        var languages = ['Spanish', 'French', 'Japanese', 'Korean', 'German', 'Arabic'];
+
+        // Function to choose a language
+        function chooseLanguage() {
+            var input = 0;
+        do {
+            input = prompt("Enter the number associated with your language of choice (1-" + languages.length + "):");
+            if (input === null) {
+                alert("No input received. Exiting.");
+                return; // Exit the function if the user cancels the prompt
+            }
+            input = parseInt(input);
+            if (isNaN(input) || input < 1 || input > languages.length) {
+                alert("Please enter a valid number between 1 and " + languages.length + ".");
+            }
+        } while (isNaN(input) || input < 1 || input > languages.length);
+
+        // Display the chosen language
+        alert("Your chosen language: " + languages[input - 1]);
+}
+
+function addLanguage() {
+    var newLanguage = prompt("Enter the name of the language you want to add:");
+    if (newLanguage) {
+        newLanguage = newLanguage.trim();
+        if (languages.includes(newLanguage)) {
+            alert("This language is already in the list.");
+        } else {
+            languages.push(newLanguage);
+            alert(newLanguage + " has been added.");
+            updateLanguageList(); // Update the list on the page
+        }
+    } else {
+        alert("No input received.");
+    }
+}
+
+function removeLanguage() {
+    var input = prompt("Enter the number of the language you want to remove (1-" + languages.length + "):");
+    if (input === null) {
+        alert("No input received. Exiting.");
+        return; // Exit the function if the user cancels the prompt
+    }
+    input = parseInt(input);
+    if (isNaN(input) || input < 1 || input > languages.length) {
+        alert("Invalid input. Please enter a number between 1 and " + languages.length + ".");
+    } else {
+        languages.splice(input - 1, 1);
+        alert("Language removed successfully.");
+        updateLanguageList(); // Update the list on the page
+    }
+}
+
+     // Set up the event listener for the button
+     window.onload = function() {
             document.getElementById("findButton").addEventListener("click", findData);
+            document.getElementById("chooseLanguageButton").addEventListener("click", chooseLanguage);
+            document.getElementById("addLanguageButton").addEventListener("click", addLanguage);
+            document.getElementById("removeLanguageButton").addEventListener("click", removeLanguage);
+            updateLanguageList(); // Initially populate the language list
+
         }
         </script>
         
