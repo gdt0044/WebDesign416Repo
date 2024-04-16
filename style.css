@@ -21,9 +21,12 @@ header img {
 
 /* Styles for nav */
 nav {
-    clear:both;
-    background-color: var(--dark-color);
-    padding: 5px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Five columns of equal width */
+    gap: 20px; /* Space between grid items */
+    padding-inline: 20px; /* Padding on the sides */
+    background-color: var(--dark-color); /* Uses the dark color variable */
+    padding: 5px; /* Padding inside the nav */
 }
 
 /* Clearfix for header */
@@ -35,25 +38,21 @@ nav {
 
 /* Styles for p elements inside nav */
 nav p {
-    display: inline-block; /* Aligns items next to each other */
-    width: 17%; /* Makes each element 17% of their parent container's width */
-    min-width: 85px; /* Minimum width to keep text on one line */
-    margin-left: 3px; /* Spaces out the elements */
-    text-align: center; /* Centers the text within the <p> element */
-    background-color: var(--border-dark-color);
-    border: 1px solid var(--light-color);
-    color: var(--light-color);
-    font-family: Arial, sans-serif; /* Arial font with sans-serif */
+    margin: 0; /* Remove margin */
+    text-align: center; /* Center text */
+    background-color: var(--dark-color); /* Consistent with nav background, adjust if needed */
+    border: none; 
+    color: var(--light-color); /* Ensure readable text color */
+    font-family: Arial, sans-serif;
 }
 
 /* Styles for anchor elements inside nav p */
 nav p a {
-    display: inline-block;
-    width: 100%;
+    display: block;
     color: var(--light-color);
-    font-weight: bold; 
-    text-decoration: none; /* Removes underline */
-    padding: 10px 0;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px 0; /* Comfortable clickable area */
 }
 
 /* New styles for headers within the header element */
@@ -69,10 +68,25 @@ header h1 {
     margin-top: 15px; /* Center Vertically */
 }
 
+html, body {
+    height: 100%; /* Ensures the full height of the viewport is used */
+    margin: 0; /* Resets default margin */
+    padding: 0; /* Resets default padding */
+    background-color: var(--light-color); /* Sets the background color */
+}
+
+body {
+    display: flex;
+    flex-direction: column; /* Stacks content vertically */
+    min-height: 100vh; /* Minimum height of 100% of the viewport height */
+}
+
 /* Style for main elements on both pages */
 main {
     background-color: var(--light-color);
     font-family: Arial, sans-serif; /* Arial font with sans-serif fallback */
+    flex: 1; /* Allows the main content to expand and fill available space, pushing the footer down */
+
 }
 
 /* Style for all headings inside main */
@@ -101,10 +115,12 @@ main h2 {
 
 /* Style for footer on all pages */
 footer {
+    width: 100%; /* Footer width to cover the screen */
     background-color: var(--dark-color);
     color: var(--light-color);
     font-style: italic; /* Italicize the text */
     text-align: center; /* Center text in the footer */
+    padding: 10px 0; /* Padding inside the footer for better spacing */
 }
 
 footer p {

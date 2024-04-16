@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Join Us - Immersion For All</title>
+    <link rel="stylesheet" href="../style.css"> <!-- Make sure this path is correct -->
+    <style>
+    main {
+            border: 8px solid var(--dark-color); /* Using the dark color variable */
+            padding-left: 8px; /* 8px padding on the left */
+            padding-right: 8px; /* 8px padding on the right */
+            margin: 20px; /* Adds margin around the main to avoid touching the window edges */
+    }
+        
+    body {
+        font-family: Arial, sans-serif; /* Modern and clean font */
+        background-color: var(--light-color);
+        color: var(--dark-color);
+        padding: 20px; /* Adds space around the content */
+    }
+    fieldset {
+        margin-top: 20px; /* Adds vertical space between fieldsets */
+        padding: 15px; /* Pads the inside of the fieldsets */
+        border: 2px solid var(--dark-color); /* Uses the custom property */
+        background-color: var(--light-color);
+    }
+    legend {
+        padding: 0 5px; /* Small padding inside legend */
+        font-size: 1.2em; /* Slightly larger text for legends */
+    }
+    label {
+        display: block; /* Ensures labels appear above their inputs */
+        margin-bottom: 5px; /* Space between label and input */
+    }
+    input[type="text"], input[type="email"], input[type="tel"], textarea {
+        width: 100%; /* Full width to expand to the width of its container */
+        padding: 8px; /* Comfortable padding inside the input fields */
+        border: 1px solid var(--dark-color); /* Subtle borders using the dark color */
+        margin-bottom: 10px; /* Space below each input field */
+        box-sizing: border-box; /* Includes padding and border in the element's total width */
+    }
+    input[type="submit"], input[type="reset"] {
+        background-color: var(--dark-color); /* Dark background for buttons */
+        color: var(--light-color); /* Light text for readability */
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer; /* Cursor indicates clickable */
+        transition: background-color 0.3s; /* Smooth transition for hover effect */
+    }
+    input[type="submit"]:hover, input[type="reset"]:hover {
+        background-color: var(--light-color); /* Light background on hover */
+        color: var(--dark-color); /* Dark text on hover */
+    }
+    </style>
+
+</head>
+<body>
+    <header>
+        <a href="../index.htm">
+            <img src="../images/logo.jpg" alt="Immersion For All Logo" width="100">
+        </a>
+        <h1>Immersion For All</h1>
+        <nav>
+            <p><a href="../index.htm">HOME</a></p>
+            <p><a href="about.htm">ABOUT US</a></p>
+            <p><a href="data.htm">DATA</a></p>
+            <p><a href="join.htm">JOIN</a></p>
+            <p><a href="#">CONTACT</a></p>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Please join our mailing list</h2>
+        <form>
+            <fieldset>
+                <legend>Personal Information</legend>
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name"><br>
+                <label for="address">Address:</label><br>
+                <input type="text" id="address" name="address"><br>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email"><br>
+                <label for="phone">Phone:</label><br>
+                <input type="tel" id="phone" name="phone"><br>
+            </fieldset>
+    
+            <fieldset>
+                <legend>Languages Spoken</legend>
+                <input type="checkbox" id="spanish" name="languages" value="Spanish">
+                <label for="spanish">Spanish</label><br>
+                <input type="checkbox" id="french" name="languages" value="French">
+                <label for="french">French</label><br>
+                <input type="checkbox" id="japanese" name="languages" value="Japanese">
+                <label for="japanese">Japanese</label><br>
+                <input type="checkbox" id="korean" name="languages" value="Korean">
+                <label for="korean">Korean</label><br>
+                <input type="checkbox" id="german" name="languages" value="German">
+                <label for="german">German</label><br>
+                <input type="checkbox" id="arabic" name="languages" value="Arabic">
+                <label for="arabic">Arabic</label><br>
+                <input type="checkbox" id="other" name="languages" value="Other">
+                <label for="other">Other</label><br>
+            </fieldset>
+
+            <fieldset>
+                <legend>Number of Dialects Spoken in Home Country</legend>
+                <input type="radio" id="one-dialect" name="dialects" value="1">
+                <label for="one-dialect">1</label><br>
+                <input type="radio" id="two-dialects" name="dialects" value="2">
+                <label for="two-dialects">2</label><br>
+                <input type="radio" id="three-dialects" name="dialects" value="3">
+                <label for="three-dialects">3</label><br>
+                <input type="radio" id="four-more-dialects" name="dialects" value="4">
+                <label for="four-more-dialects">4 or more</label><br>
+            </fieldset>
+
+            <fieldset>
+                <legend>Additional Information</legend>
+                <textarea id="additionalInfo" name="additionalInfo" rows="4" cols="50" placeholder="Tell us something we might be interested in knowing..."></textarea>
+            </fieldset>
+
+            <div>
+                <input type="submit" value="Submit">
+                <input type="reset" value="Reset" style="margin-left: 20px;">
+            </div>
+            
+        </form>
+    </main>
+    
+
+    <footer>
+        <p>Site copyright &copy; 2024 by Grant Durant.</p>
+    </footer>
+</body>
+</html>

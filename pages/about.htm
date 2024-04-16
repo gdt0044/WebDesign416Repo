@@ -23,6 +23,59 @@
         box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); /* Adds a subtle shadow */
     }
     
+    .intro-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-auto-flow: dense;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-gap: 15px; 
+        grid-row-gap: 10px; /* Sets row gap if you prefer different from column gap */
+        min-height: 100px; /* Row minimum height */
+    }
+
+    .intro-grid > div {
+        background-color: var(--light-color); /* Example background color, adjust as needed */
+        padding: 10px; /* Padding inside each grid cell */
+        border: 1px solid var(--dark-color); /* Example border for each grid cell */
+        height: 100%; /* Makes sure content fills the cell */
+        position: relative; /* Needed for positioning captions absolutely later */
+        overflow: hidden; /* Ensures no overflow from images */
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Light gray, subtle shadow */
+
+    }
+
+    .intro-grid img {
+    width: 100%; /* Images fill their divs horizontally */
+    height: auto; /* Heights vary as needed */
+    display: block; /* Removes bottom margin/gap */
+}
+    .caption {
+        position: absolute;
+        bottom: 10px; /* Adjust position as needed */
+        left: 0;
+        width: 100%; /* Ensures the caption spans the full width of the div */
+        text-align: center; /* Centers the text within the caption */
+        padding: 5px 0; /* Adds some padding within the caption */
+        background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+        color: var(--light-color); /* Ensures text color is readable against the background */
+        font-size: 0.9em; /* Adjust size as needed */
+    }
+
+    .dark-caption {
+        color: var(--dark-color); /* Dark text color for light backgrounds */
+    }
+
+    .light-caption {
+        color: var(--light-color); /* Light text color for dark backgrounds */
+    }
+    .double-column {
+    grid-column: span 2; /* Makes the div span two columns */
+}
+
+    .double-row {
+    grid-row: span 2; /* Makes the div span two rows */
+}
+
     </style>
 </head>
 <body>
@@ -35,15 +88,52 @@
             <p><a href="../index.htm">HOME</a></p>
             <p><a href="about.htm">ABOUT US</a></p>
             <p><a href="data.htm">DATA</a></p>
-            <p><a href="#">BLOG</a></p>
+            <p><a href="join.htm">JOIN</a></p>
             <p><a href="#">CONTACT</a></p>
         </nav>
     </header>
 
     <main>
         <section>
+          <section class="intro-grid">
+        <div class="grid-item double-column">
+    <img src="../images/AJATT.jpg" alt="AJATT">
+    <p class="caption light-caption">AJATT</p>
+</div>
+<div class="grid-item double-row">
+    <img src="../images/Cure Dolly.jpg" alt="Cure Dolly">
+    <p class="caption light-caption">Cure Dolly</p>
+</div>
+<div class="grid-item double-column">
+    <img src="../images/Emis Nikki.jpg" alt="Emis Nikki">
+    <p class="caption light-caption">Emis Nikki</p>
+</div>
+<div class="grid-item double-column">
+    <img src="../images/GameGengo.jpg" alt="Game Gengo">
+    <p class="caption light-caption">Game Gengo</p>
+</div>
+<div class="grid-item double-row">
+    <img src="../images/Livakivi.jpg" alt="Livakivi">
+    <p class="caption light-caption">Livakivi</p>
+</div>
+<div class="grid-item">
+    <img src="../images/Matt.jpg" alt="MattVsJapan">
+    <p class="caption light-caption">MattVsJapan</p>
+</div>
+<div class="grid-item">
+    <img src="../images/Oojiman.jpg" alt="Oojiman">
+    <p class="caption light-caption">Oojiman</p>
+</div>
+<div class="grid-item">
+    <img src="../images/Refold.png" alt="Refold">
+    <p class="caption light-caption">Refold</p>
+</div>
+
+        
+</section>
+
             <h2>Our History</h2>
-            <img src="../images/Krashen.jpg" alt="Our History" class="history-image">
+            
             <p>The history of immersion learning is technically as old as language itself, but to pinpoint 
                 the period of time in which the theory behind it reached its most prominent state, we need 
                 look no further than the man in the image above. Stephen Krashen is widely considered to be the 
