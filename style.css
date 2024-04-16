@@ -53,6 +53,14 @@ nav p a {
     font-weight: bold;
     text-decoration: none;
     padding: 10px 0; /* Comfortable clickable area */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for background and text color */
+
+}
+
+/* Hover effects for links */
+nav p a:hover {
+    background-color: var(--light-color); /* Changes background to light color */
+    color: var(--dark-color); /* Changes text color to dark color */
 }
 
 /* New styles for headers within the header element */
@@ -150,3 +158,12 @@ td {
     border: 1px solid var(--border-dark-color);
     padding: 5px 10px; /* Padding for text in td cells */
 }
+
+main > table > tbody > tr:nth-child(odd) {
+    background-color: hsl(210, 73%, 85%); /* Lighter shade for odd rows */
+}
+
+main > table > tbody > tr:nth-child(even) {
+    background-color: hsl(210, 73%, 75%); /* Darker shade for even rows */
+}
+

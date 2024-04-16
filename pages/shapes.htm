@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shapes - Immersion For All</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        main {
+            padding-top: 10px; /* Adds spacing at the top */
+        }
+
+        main > section:first-child {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        grid-gap: 10px;
+        grid-auto-rows: minmax(100px, auto);
+    }
+
+    main > section:first-child > .shape-box {
+        border: 1px solid var(--dark-color);
+        padding: 10px;
+        height: 100%;
+        display: flex; /* Center the inner box */
+        align-items: center; /* Align vertically */
+        justify-content: center; /* Align horizontally */
+    }
+
+    .shape-box > .inner-box {
+    background-color: var(--dark-color); /* Dark background color */
+    width: 50px;
+    height: 50px;
+    display: grid; /* Use grid layout */
+    place-items: center; /* Shorthand to align and justify content at the center */
+    color: var(--light-color); /* Light text color */
+    font-weight: bold;
+}
+
+#box2 {
+    transform: translate(20px, 20px); /* Adjust values as needed */
+}
+
+#box3 {
+    transform: rotate(60deg); /* Rotates the div 60 degrees clockwise */
+    transform-origin: center center; /* Adjusts the point around which it rotates */
+}
+
+#box4 {
+    transform: scaleX(2); /* Scales the div to twice its original width */
+    transform-origin: left center; /* Adjusts the origin of the transformation to prevent overflow */
+}
+
+#box5 {
+    transform: skewY(-45deg); /* Skews the div to form a diamond shape */
+    transform-origin: center; /* Ensures the skew is centered */
+}
+
+main ol::marker {
+    color: red; /* Sets the color of the list markers to red */
+}
+
+
+
+
+        
+    </style>
+</head>
+<body>
+    <header>
+        <a href="../index.htm">
+            <img src="../images/logo.jpg" alt="Immersion For All Logo" width="100">
+        </a>
+        <h1>Immersion For All</h1>
+        <nav>
+            <p><a href="../index.htm">HOME</a></p>
+            <p><a href="about.htm">ABOUT US</a></p>
+            <p><a href="data.htm">DATA</a></p>
+            <p><a href="join.htm">JOIN</a></p>
+            <p><a href="shapes.htm">SHAPES</a></p>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <div class="shape-box">
+                <div id="box1" class="inner-box">1</div>
+            </div>
+            <div class="shape-box">
+                <div id="box2" class="inner-box">2</div>
+            </div>
+            <div class="shape-box">
+                <div id="box3" class="inner-box">3</div>
+            </div>
+            <div class="shape-box">
+                <div id="box4" class="inner-box">4</div>
+            </div>
+            <div class="shape-box">
+                <div id="box5" class="inner-box">5</div>
+            </div>
+        </section>
+
+        <section>
+            
+        </section>
+
+        <ol>
+            <li>None</li>
+            <li>Translate</li>
+            <li>Rotate (with transform-origin adjusted)</li>
+            <li>Scale (with transform-origin adjusted)</li>
+            <li>Skew (with transform-origin adjusted)</li>
+        </ol>
+    </main>
+
+    <footer>
+        <p>Site copyright &copy; 2024 by Grant Durant.</p>
+    </footer>
+</body>
+</html>

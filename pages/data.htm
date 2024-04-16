@@ -61,6 +61,16 @@
             border: 1px solid #000066;
             padding: 5px 10px;
         }
+
+        main > table > tbody tr:nth-child(odd) {
+    background-color: hsl(210, 73%, 85%); /* Lighter shade for odd rows */
+        }
+
+        main > table > tbody tr:nth-child(even) {
+    background-color: hsl(210, 73%, 75%); /* Darker shade for even rows */
+        }       
+
+
     </style>
 </head>
 <body>
@@ -74,7 +84,7 @@
             <p><a href="about.htm">ABOUT US</a></p>
             <p><a href="data.htm">DATA</a></p>
             <p><a href="join.htm">JOIN</a></p>
-            <p><a href="#">CONTACT</a></p>
+            <p><a href="shapes.htm">SHAPES</a></p>
         </nav>
     </header>
 
@@ -82,6 +92,7 @@
         <!-- Content for your data page goes here -->
         <h2>Some information about our Language Leaders</h2>
         <table>
+            <thead>
             <tr>
                 <th id="name-col">Name</th>
                 <th id="age-col">Age</th>
@@ -89,6 +100,9 @@
                 <th id="language-col">Languages Spoken</th>
                 <th id="experience-col">Years of Experience</th>
             </tr>
+        </thead>
+        
+            <tbody>
             <tr>
                 <td id="name1">Oojiman</td>
                 <td id="age1">29</td>
@@ -117,6 +131,7 @@
                 <td id="language4">French, English, Spanish</td>
                 <td id="experience4">7</td>
             </tr>
+        </tbody>
         </table>
 
         <p class="inline-block">
@@ -130,8 +145,6 @@
         <ol id="languageList"></ol>
 
         <button id="chooseLanguageButton">Choose a language</button>
-        <div id="results"></div>
-
         <button id="addLanguageButton">Add a language</button>
         <button id="removeLanguageButton">Remove a language</button>
         <div id="results"></div>
