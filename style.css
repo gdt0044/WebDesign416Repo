@@ -167,3 +167,29 @@ main > table > tbody > tr:nth-child(even) {
     background-color: hsl(210, 73%, 75%); /* Darker shade for even rows */
 }
 
+/* Media query for viewport widths of 600px or less */
+@media (max-width: 600px) {
+
+    header img {
+        float: none; 
+        display: block; /* Make image a block element to allow for centering */
+        margin: 0 auto; /* Center the image */
+    }
+
+    nav {
+        display: block; /* Stack the nav items */
+    }
+
+    nav p {
+        display: block; 
+        width: 100%; /* Set width to 100% of the viewport */
+        margin: 0; 
+        text-align: center; 
+    }
+
+    nav p a {
+        display: block; 
+        padding: 10px; 
+    }
+
+}
