@@ -46,6 +46,7 @@
         float: left; /* Float the image to the left */
         margin-right: 20px; /* Margin on the right to separate from the text */
     }
+    
 
     @container (max-width: 750px) {
         .article-img {
@@ -54,6 +55,12 @@
             margin-left: 20px; /* Add margin to the left */
         }
     }
+
+    #swapButton {
+    max-width: 200px; /* Or the maximum width you prefer */
+    margin: 0 auto; /* Centers the button if it's in a block-level container */
+}
+
     </style>
     
 </head>
@@ -107,9 +114,9 @@
 
                 Our goal is to make language learning both fun and efficient. We hope you'll join us.
             </p>
-            
+            <button id="swapButton">Swap Articles</button>
         </article>
-        <button id="swapButton">Swap Articles</button>
+        
 
     </main>
         
